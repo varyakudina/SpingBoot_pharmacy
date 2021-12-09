@@ -17,4 +17,6 @@ public interface ProductService {
     Page<Product> filterAll(Integer minDosage, Integer maxDosage, Integer minPrice, Integer maxPrice,Integer minQuantity, Integer maxQuantity, String description, Integer page, Integer size, String sort, Pageable defaultPageable);
 
     Page<Product> findAllProduct(Pageable defaultPageable);
+
+    void update(ProductDTO productDTO);
 }

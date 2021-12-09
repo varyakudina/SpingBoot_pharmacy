@@ -14,9 +14,6 @@ import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
 import lombok.AllArgsConstructor;
 
-import java.util.List;
-
-import static com.boots.specification.OrderStatusSpecification.descriptionA;
 import static com.boots.specification.ProductSpecification.*;
 import static java.util.Objects.isNull;
 
@@ -42,6 +39,10 @@ public class DefaultProductService implements ProductService {
         if (isNull(productDTO.getProduct_id())){
             throw new ValidationException("Product_id is empty");
         }
+    }
+
+    public void update (ProductDTO productDTO) {
+            productRepository.save(this.productConverter.fromProductDTOToProduct(productDTO));
     }
 
     public Page<Product> filterAll(Integer minDosage, Integer maxDosage, Integer minPrice, Integer maxPrice,Integer minQuantity, Integer maxQuantity, String description, Integer page, Integer size, String sort, Pageable defaultPageable) {
@@ -76,6 +77,7 @@ public class DefaultProductService implements ProductService {
     public Page<Product> findAllProduct(Pageable defaultPageable) {
         return productRepository.findAll(defaultPageable);
     }
+
 
 }
 

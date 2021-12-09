@@ -18,7 +18,6 @@ public class ProductAssembler extends RepresentationModelAssemblerSupport<Produc
     public ProductAssembler() {
         super(ProductController.class, ProductDTO.class);
     }
-
     @Override
     public CollectionModel<ProductDTO> toCollectionModel(Iterable<? extends Product> entity)
     {

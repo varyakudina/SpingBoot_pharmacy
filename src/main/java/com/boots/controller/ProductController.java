@@ -12,6 +12,7 @@ import org.springframework.data.domain.Sort;
 import org.springframework.data.web.PagedResourcesAssembler;
 import org.springframework.hateoas.PagedModel;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.method.P;
 import org.springframework.web.bind.annotation.*;
 
 
@@ -25,21 +26,29 @@ import org.springframework.data.web.PageableDefault;
 
 public class ProductController {
 
-    private PagedResourcesAssembler<Product> pagedResourcesAssembler;
+    private final PagedResourcesAssembler<Product> pagedResourcesAssembler;
     private ProductAssembler productAssembler;
 
     @Autowired
     ProductService productService;
 
     public ProductController() {
-        this.pagedResourcesAssembler = pagedResourcesAssembler;
+        this.pagedResourcesAssembler = new PagedResourcesAssembler<>(null, null);
         this.productAssembler = productAssembler;
+
     }
 
     @PostMapping("/save")
     public ProductDTO saveProduct(@RequestBody ProductDTO productDTO) throws ValidationException {
         log.info("Handling save product: " + productDTO);
         return productService.saveProduct(productDTO);
+    }
+
+    @PutMapping("/update")
+    public ResponseEntity<Void> update(ProductDTO productDTO){
+        log.info("Handling update product request" + productDTO);
+        productService.update(productDTO);
+        return ResponseEntity.ok().build();
     }
 
     @GetMapping(value = "/filter")
