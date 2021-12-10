@@ -59,4 +59,8 @@ public class ProductControllerTest {
             throw new RuntimeException(e);
         }
     }
+
+    public static ProductDTO getProduct() {
+        return new ProductDTO(1,"acc" , "price = 20", 10,20,15,3);
+    }
 }
