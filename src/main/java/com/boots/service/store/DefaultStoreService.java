@@ -32,19 +32,19 @@ public class DefaultStoreService implements StoreService {
         if (isNull(storeDTO)) {
             throw new ValidationException("Object store is null");
         }
-        if (isNull(storeDTO.getStore_id())) {
+        if (isNull(storeDTO.getId())) {
             throw new ValidationException("Store_id is empty");
         }
     }
 
     @Override
-    public void deleteStore(Integer store_id) {
-        storeRepository.deleteById(store_id);
+    public void deleteStore(Integer Id) {
+        storeRepository.deleteById(Id);
     }
 
     @Override
-    public StoreDTO findByStore_id(Integer store_id) {
-        Store store = storeRepository.findByStore_id(store_id);
+    public StoreDTO findById(Integer Id) {
+        Store store = storeRepository.findByStore_id(Id);
         if (store != null) {
             return storeConverter.fromStoreToStoreDTO(store);
         }

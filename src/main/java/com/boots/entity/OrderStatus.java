@@ -13,12 +13,13 @@ public class OrderStatus {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "order_id")
     private Integer orderId;
 
-    @Column
+    @Column(name = "checkout_data")
     private String checkoutData;
 
-    @Column
+    @Column(name = "delivery_data")
     private String deliveryData;
 
 }

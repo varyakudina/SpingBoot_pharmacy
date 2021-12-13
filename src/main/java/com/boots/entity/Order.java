@@ -13,14 +13,15 @@ public class Order {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer order_id;
+    @Column(name = "order_id")
+    private Integer Id;
 
-    @Column
-    private String delivery_address;
+    @Column(name = "delivery_address")
+    private String deliveryAddress;
 
-    @Column
-    private Integer user_id;
+    @Column(name = "user_id")
+    private Integer userId;
 
-    @Column
-    private Enum payment_type;
+    @Column(name = "payment_type")
+    private Enum paymentType;
 }

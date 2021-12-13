@@ -10,11 +10,11 @@ import org.springframework.hateoas.RepresentationModel;
 @AllArgsConstructor
 public class ProductDTO extends RepresentationModel<ProductDTO> {
 
-    private Integer product_id;
+    private Integer Id;
     private String name;
     private String description;
     private Integer dosage;
     private Integer price;
     private Integer quantity;
-    private Integer store_id;
+    private Integer storeId;
 }

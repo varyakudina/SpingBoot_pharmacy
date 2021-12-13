@@ -9,9 +9,9 @@ public interface StoreService {
 
     StoreDTO saveStore(StoreDTO storeDTO) throws ValidationException;
 
-    void deleteStore(Integer store_id);
+    void deleteStore(Integer Id);
 
-    StoreDTO findByStore_id(Integer store_id);
+    StoreDTO findById(Integer Id);
 
     List<StoreDTO> findAll();
 }

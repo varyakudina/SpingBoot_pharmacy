@@ -76,16 +76,16 @@ public class ProductController {
                 : ResponseEntity.notFound().build();
     }
 
-    @GetMapping("/findProductByProductId")
-    public ProductDTO findByProduct_id(@RequestParam Integer productId) {
-        log.info("Handling find by product_id request: " + productId);
-        return productService.findByProduct_id(productId);
+    @GetMapping("/findProductById")
+    public ProductDTO findById(@RequestParam Integer Id) {
+        log.info("Handling find by product_id request: " + Id);
+        return productService.findById(Id);
     }
 
-    @DeleteMapping("/delete/{productId}")
-    public ResponseEntity<Void> deleteProduct(@PathVariable Integer productId) {
-        log.info("Handling delete product request: " + productId);
-        productService.deleteProduct(productId);
+    @DeleteMapping("/delete/{Id}")
+    public ResponseEntity<Void> deleteProduct(@PathVariable Integer Id) {
+        log.info("Handling delete product request: " + Id);
+        productService.deleteProduct(Id);
         return ResponseEntity.ok().build();
     }
 }

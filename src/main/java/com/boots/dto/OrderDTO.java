@@ -7,8 +7,8 @@ import lombok.Data;
 @Builder
 public class OrderDTO {
 
-    private Integer order_id;
-    private String delivery_address;
-    private Integer user_id;
-    private Enum payment_type;
+    private Integer Id;
+    private String deliveryAddress;
+    private Integer userId;
+    private Enum paymentType;
 }

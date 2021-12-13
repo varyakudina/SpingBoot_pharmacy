@@ -8,9 +8,9 @@ public interface OrderService {
 
     OrderDTO saveOrder(OrderDTO orderDTO) throws ValidationException;
 
-    void deleteOrder(Integer order_id);
+    void deleteOrder(Integer Id);
 
-    OrderDTO findByUserId(Integer user_id);
+    OrderDTO findByUserId(Integer userId);
 
     List<OrderDTO> findAllOrder();
 }

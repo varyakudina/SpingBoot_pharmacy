@@ -36,7 +36,7 @@ public class DefaultProductService implements ProductService {
         if (isNull(productDTO)) {
             throw new ValidationException("Object product is null");
         }
-        if (isNull(productDTO.getProduct_id())){
+        if (isNull(productDTO.getId())){
             throw new ValidationException("Product_id is empty");
         }
     }
@@ -60,13 +60,13 @@ public class DefaultProductService implements ProductService {
     }
 
     @Override
-    public void deleteProduct(Integer product_id) {
-        productRepository.deleteById(product_id);
+    public void deleteProduct(Integer Id) {
+        productRepository.deleteById(Id);
     }
 
     @Override
-    public ProductDTO findByProduct_id(Integer product_id) {
-        Product product = productRepository.findByProduct_id(product_id);
+    public ProductDTO findById(Integer Id) {
+        Product product = productRepository.findByProduct_id(Id);
         if (product != null) {
             return productConverter.fromProductToProductDTO(product);
         }

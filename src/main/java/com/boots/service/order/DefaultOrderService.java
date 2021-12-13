@@ -37,19 +37,19 @@ public class DefaultOrderService implements OrderService{
         if (isNull(orderDTO)) {
             throw new ValidationException("Object order is null");
         }
-        if (isNull(orderDTO.getOrder_id())) {
+        if (isNull(orderDTO.getId())) {
             throw new ValidationException("Order)id is empty");
         }
     }
 
     @Override
-    public void deleteOrder(Integer order_id) {
-        orderRepository.deleteById(order_id);
+    public void deleteOrder(Integer Id) {
+        orderRepository.deleteById(Id);
     }
 
     @Override
-    public OrderDTO findByUserId(Integer user_id) {
-        Order order = orderRepository.findByUserId(user_id);
+    public OrderDTO findByUserId(Integer userId) {
+        Order order = orderRepository.findByUserId(userId);
         return orderConverter.fromOrderToOrderDTO(order);
     }
 

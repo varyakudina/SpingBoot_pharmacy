@@ -10,9 +10,9 @@ public interface ProductService {
 
     ProductDTO saveProduct(ProductDTO productDTO) throws ValidationException;
 
-    void deleteProduct(Integer product_id);
+    void deleteProduct(Integer Id);
 
-    ProductDTO findByProduct_id(Integer product_id);
+    ProductDTO findById(Integer Id);
 
     Page<Product> filterAll(Integer minDosage, Integer maxDosage, Integer minPrice, Integer maxPrice,Integer minQuantity, Integer maxQuantity, String description, Integer page, Integer size, String sort, Pageable defaultPageable);
 

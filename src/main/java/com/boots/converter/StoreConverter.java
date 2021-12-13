@@ -10,7 +10,7 @@ public class StoreConverter {
 
     public Store fromStoreDTOToStore(StoreDTO storeDTO) {
         Store store = new Store();
-        store.setStore_id(storeDTO.getStore_id());
+        store.setId(storeDTO.getId());
         store.setAddress(storeDTO.getAddress());
         store.setNumber(storeDTO.getNumber());
         return store;
@@ -18,7 +18,7 @@ public class StoreConverter {
 
     public StoreDTO fromStoreToStoreDTO(Store store) {
         return StoreDTO.builder()
-                .store_id(store.getStore_id())
+                .Id(store.getId())
                 .address(store.getAddress())
                 .number(store.getNumber())
                 .build();

@@ -32,16 +32,16 @@ public class StoreController {
         return storeService.findAll();
     }
 
-    @GetMapping("/findStoreByStore_id")
-    public StoreDTO findByStore_id(@RequestParam Integer store_id) {
-        log.info("Handling find by store_id request: " + store_id);
-        return storeService.findByStore_id(store_id);
+    @GetMapping("/findStoreById")
+    public StoreDTO findByStore_id(@RequestParam Integer Id) {
+        log.info("Handling find by store_id request: " + Id);
+        return storeService.findById(Id);
     }
 
-    @DeleteMapping("/deleteStore/{store_id}")
-    public ResponseEntity<Void> deleteStore(@PathVariable Integer store_id) {
-        log.info("Handling delete store request: " + store_id);
-        storeService.deleteStore(store_id);
+    @DeleteMapping("/deleteStore/{Id}")
+    public ResponseEntity<Void> deleteStore(@PathVariable Integer Id) {
+        log.info("Handling delete store request: " + Id);
+        storeService.deleteStore(Id);
         return ResponseEntity.ok().build();
     }
 }

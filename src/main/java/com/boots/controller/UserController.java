@@ -38,10 +38,10 @@ public class UserController {
         return userService.findByPassword(password);
     }
 
-    @DeleteMapping("/deleteUsers/{userId}")
-    public ResponseEntity<Void> deleteUser(@PathVariable Integer userId) {
-        log.info("Handling delete user request: " + userId);
-        userService.deleteUser(userId);
+    @DeleteMapping("/deleteUsers/{Id}")
+    public ResponseEntity<Void> deleteUser(@PathVariable Integer Id) {
+        log.info("Handling delete user request: " + Id);
+        userService.deleteUser(Id);
         return ResponseEntity.ok().build();
     }
 }

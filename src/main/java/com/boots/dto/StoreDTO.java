@@ -7,7 +7,7 @@ import lombok.Data;
 @Builder
 public class StoreDTO {
 
-    private Integer store_id;
+    private Integer Id;
     private String address;
     private Integer number;
 }

@@ -13,11 +13,12 @@ public class Store {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer store_id;
+    @Column(name = "store_id")
+    private Integer Id;
 
-    @Column
+    @Column(name = "address")
     private String address;
 
-    @Column
+    @Column(name = "number")
     private Integer number;
 }

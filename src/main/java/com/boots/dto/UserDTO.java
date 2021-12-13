@@ -11,7 +11,7 @@ import javax.validation.constraints.Size;
 @Builder
 public class UserDTO {
 
-    private Integer user_id;
+    private Integer Id;
     @NotNull(message = "Name cannot be null")
     private String name;
     @Email(message = "Email should be valid")

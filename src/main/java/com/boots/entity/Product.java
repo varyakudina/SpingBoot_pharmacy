@@ -14,24 +14,24 @@ public class Product {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer product_id;
+    private Integer Id;
 
-    @Column
+    @Column(name = "name")
     @NotNull(message = "Name cannot be null")
     private String name;
 
-    @Column
+    @Column(name = "description")
     private String description;
 
-    @Column
+    @Column(name = "dosage")
     private Integer dosage;
 
-    @Column
+    @Column(name = "price")
     private Integer price;
 
-    @Column
+    @Column(name = "quantity")
     private Integer quantity;
 
-    @Column
-    private Integer store_id;
+    @Column(name = "store_id")
+    private Integer storeId;
 }

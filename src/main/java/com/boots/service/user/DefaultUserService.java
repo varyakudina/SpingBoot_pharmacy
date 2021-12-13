@@ -44,10 +44,9 @@ public class DefaultUserService implements UserService {
     }
 
     @Override
-    public void deleteUser(Integer user_id) {
-        userRepository.deleteById(user_id);
+    public void deleteUser(Integer Id) {
+        userRepository.deleteById(Id);
     }
-
 
     @Override
     public UserDTO findByLogin(String login) {
